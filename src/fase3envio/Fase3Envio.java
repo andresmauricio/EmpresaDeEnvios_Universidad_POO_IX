@@ -19,7 +19,7 @@ public class Fase3Envio {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Fase3EmpresaEnvios.Main.main()");
-        showPanelRegistrarEmpleado();
+        showPanelRegistrarUsuario();
 
     }
     
@@ -33,9 +33,14 @@ public class Fase3Envio {
         ventanaConex.setVisible(true);
     }
     
-        private static void showPanelRegistrarEmpleado() {
+    private static void showPanelRegistrarEmpleado() {
         JFrame registrarEmpleado = new RegistrarEmpleado();
         registrarEmpleado.setVisible(true);
+    }
+        
+     private static void showPanelRegistrarUsuario() {
+        JFrame registrarUsuario = new RegistrarUsuario();
+        registrarUsuario.setVisible(true);
     }
     
 }
