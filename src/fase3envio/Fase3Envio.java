@@ -19,7 +19,7 @@ public class Fase3Envio {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Fase3EmpresaEnvios.Main.main()");
-        showPanelRegistrarUsuario();
+        showPanelGenerarReporte();
 
     }
     
@@ -43,4 +43,8 @@ public class Fase3Envio {
         registrarUsuario.setVisible(true);
     }
     
+    private static void showPanelGenerarReporte() {
+        JFrame generarReporte = new GenerarReporte();
+        generarReporte.setVisible(true);
+    }
 }
