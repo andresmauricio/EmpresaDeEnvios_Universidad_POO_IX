@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class Empleado extends Person {
     
-    public Empleado(int id, 
+    public Empleado(String id, 
             String nombres, 
             String identificacion, 
             String nacimiento, 
@@ -40,7 +40,7 @@ public class Empleado extends Person {
 		// conexion.establecerConexion();
 		String seleccion="INSERT INTO `empleado`(`idEmpleado`,`identificacion`,`nombres`,`fecha_de_nacimiento`,`telefono`,`password`, `Empleadocol`, `rol`)"+"values (?,?,?,?,?,?,?,?)";
 		PreparedStatement ps=conexion.IConnection.prepareStatement(seleccion);
-		ps.setInt(1, id);
+		ps.setString(1, id);
 		ps.setString(2, identificacion);
 		ps.setString(3, nombres);
 		ps.setString(4, nacimiento);

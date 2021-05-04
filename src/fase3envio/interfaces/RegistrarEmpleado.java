@@ -6,6 +6,7 @@
 package fase3envio.interfaces;
 
 import java.sql.SQLException;
+import java.util.UUID;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import models.Empleado;
@@ -181,19 +182,22 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
     }//GEN-LAST:event_Empleado_BtnVaciarActionPerformed
 
     private void Empleado_BtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Empleado_BtnRegistrarActionPerformed
-            Empleado empleado = new Empleado(3, 
-                                            Empleado_Nombres.getText(), 
-                                            Empleado_Identificacion.getText(), 
-                                            Empleado_Nacimiento.getText(), 
-                                            "OFICINA 1", 
-                                            Empleado_Telefono.getText(), 
-                                            EmpleadoRol.getText(), 
-                                            Empleado_IContrasena.getText());
-           try {
-               empleado.insertaEmpleado();
-           } catch (SQLException ex) {
-               System.out.println("error" + ex);
-          }
+                String id = UUID.randomUUID().toString();
+
+                Empleado empleado = new Empleado(id,
+                    Empleado_Nombres.getText(),
+                    Empleado_Identificacion.getText(),
+                    Empleado_Nacimiento.getText(),
+                    "OFICINA 1",
+                    Empleado_Telefono.getText(),
+                    EmpleadoRol.getText(),
+                    Empleado_IContrasena.getText());
+                
+                try {
+                    empleado.insertaEmpleado();
+                } catch (SQLException ex) {
+                    Logger.getLogger(RegistrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+                }
         
     }//GEN-LAST:event_Empleado_BtnRegistrarActionPerformed
 

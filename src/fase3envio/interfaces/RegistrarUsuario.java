@@ -5,6 +5,12 @@
  */
 package fase3envio.interfaces;
 
+import java.sql.SQLException;
+import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import models.Usuario;
+
 /**
  *
  * @author PC
@@ -62,6 +68,11 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         jLabel8.setText("Dirección");
 
         Usuario_BtnRegistrarUsuario.setText("Registrar Usuario");
+        Usuario_BtnRegistrarUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Usuario_BtnRegistrarUsuarioActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Andrés Mauricio Acelas Arevalo - Cod. 1.052.412.239");
 
@@ -169,6 +180,26 @@ public class RegistrarUsuario extends javax.swing.JFrame {
         Usuario_Nombres.setText("");
         Usuario_Telefono.setText("");
     }//GEN-LAST:event_Usuario_VaciarActionPerformed
+
+    private void Usuario_BtnRegistrarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usuario_BtnRegistrarUsuarioActionPerformed
+        String id = UUID.randomUUID().toString();
+
+        Usuario user = new Usuario(id,
+            Usuario_Nombres.getText(),
+            Usuario_Identidad.getText(),
+            Usuario_Fecha.getText(),
+            "BOGOTA",
+            Usuario_Telefono.getText(),
+            Usuario_Direccion.getText(),
+            Usuario_Contrasena.getText());
+        
+        try {
+            user.insertaUsuario();
+        } catch (SQLException ex) {
+            Logger.getLogger(RegistrarUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+       
+    }//GEN-LAST:event_Usuario_BtnRegistrarUsuarioActionPerformed
 
     /**
      * @param args the command line arguments

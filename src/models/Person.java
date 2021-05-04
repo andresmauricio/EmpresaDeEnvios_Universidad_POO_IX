@@ -11,7 +11,7 @@ package models;
  */
 public class Person {
 
-    public int id;
+    public String id;
     public String nombres;
     public String identificacion;
     public String nacimiento;
@@ -20,10 +20,10 @@ public class Person {
     public String password;
     public String rol;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
     public String getNombres() {
@@ -63,7 +63,7 @@ public class Person {
         this.rol = rol;
     }
 
-    public Person(int id, String nombres, String identificacion, String nacimiento, String direccion, String telefono,
+    public Person(String id, String nombres, String identificacion, String nacimiento, String direccion, String telefono,
         String rol, String password) {
         super();
         this.id = id;
