@@ -5,6 +5,12 @@
  */
 package fase3envio.interfaces;
 
+import java.sql.SQLException;
+import java.util.UUID;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import models.Factura;
+
 /**
  *
  * @author PC
@@ -69,6 +75,11 @@ public class Envio extends javax.swing.JFrame {
         jLabel7.setText("Valor");
 
         jButton1.setText("Enviar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,6 +156,22 @@ public class Envio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String id = UUID.randomUUID().toString();
+        Factura envio = new Factura(id, 
+                                    Envio_Valor.getText(), 
+                                    Envio_ComboDestino.getName(),
+                                    Envio_ComboOrigen.getName(), 
+                                    Envio_Para.getText(), 
+                                    Envio_Remite.getText());
+        try {
+            envio.inserFactura();
+        } catch (SQLException ex) {
+            Logger.getLogger(Envio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
