@@ -5,6 +5,12 @@
  */
 package fase3envio;
 
+import fase3envio.interfaces.RegistrarEmpleado;
+import fase3envio.interfaces.VentanaConexion;
+import fase3envio.interfaces.Login;
+import fase3envio.interfaces.Envio;
+import fase3envio.interfaces.GenerarReporte;
+import fase3envio.interfaces.RegistrarUsuario;
 import javax.swing.JFrame;
 
 /**
