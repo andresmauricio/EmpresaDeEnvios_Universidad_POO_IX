@@ -27,7 +27,9 @@ public class Fase3Envio {
         System.out.println("Fase3EmpresaEnvios.Main.main()");
         Conexion conexion = new Conexion();
         conexion.establecerConexion();
-        showPanelRegistrarUsuario();
+        showPanelLogin();
+        showPanelConexion();
+        showPanelRegistrarEmpleado();
     }
     
     public static void showPanelLogin() {
