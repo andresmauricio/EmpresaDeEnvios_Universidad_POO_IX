@@ -5,6 +5,11 @@
  */
 package fase3envio.interfaces;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import models.Reporte;
+
 /**
  *
  * @author PC
@@ -30,10 +35,10 @@ public class GenerarReporte extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        Reporte_ciudad = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Reporte_fecha = new javax.swing.JTextField();
+        Reporte_Btn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -44,13 +49,18 @@ public class GenerarReporte extends javax.swing.JFrame {
 
         jLabel3.setText("Ciudad");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bogotá", "Medellin", "Cali", "Bucaramanga" }));
+        Reporte_ciudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bogotá", "Medellin", "Cali", "Bucaramanga" }));
 
         jLabel4.setText("Fecha");
 
-        jTextField1.setText("2020-02-14");
+        Reporte_fecha.setText("2020-02-14");
 
-        jButton1.setText("Generar Reprte");
+        Reporte_Btn.setText("Generar Reprte");
+        Reporte_Btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Reporte_BtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,7 +68,7 @@ public class GenerarReporte extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(141, 141, 141)
-                .addComponent(jButton1)
+                .addComponent(Reporte_Btn)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(112, Short.MAX_VALUE)
@@ -69,8 +79,8 @@ public class GenerarReporte extends javax.swing.JFrame {
                             .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(Reporte_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Reporte_ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                             .addComponent(jLabel2)
@@ -87,14 +97,13 @@ public class GenerarReporte extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Reporte_ciudad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Reporte_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36)
-                .addComponent(jButton1)
+                .addComponent(Reporte_Btn)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 82, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addContainerGap())
@@ -102,6 +111,16 @@ public class GenerarReporte extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Reporte_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Reporte_BtnActionPerformed
+        // TODO add your handling code here:
+        Reporte reporte = new Reporte(1,Reporte_ciudad.getName(), Reporte_fecha.getText(), "15246", "105417" );
+        try {
+            reporte.inserReport();
+        } catch (SQLException ex) {
+            Logger.getLogger(GenerarReporte.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_Reporte_BtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,12 +158,12 @@ public class GenerarReporte extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton Reporte_Btn;
+    private javax.swing.JComboBox<String> Reporte_ciudad;
+    private javax.swing.JTextField Reporte_fecha;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
