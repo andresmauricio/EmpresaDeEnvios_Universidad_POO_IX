@@ -28,27 +28,26 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Usuario_Nombres = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Usuario_Direccion = new javax.swing.JTextField();
+        Usuario_Contrasena = new javax.swing.JPasswordField();
+        Usuario_Telefono = new javax.swing.JTextField();
+        Usuario_Fecha = new javax.swing.JTextField();
+        Usuario_Identidad = new javax.swing.JTextField();
+        Usuario_BtnRegistrarUsuario = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        Usuario_Vaciar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel1.setText("Interfaz: Registrar Usuario");
-
-        jTextField1.setText("Nombres y Apellidos Completos");
 
         jLabel3.setText("Nombres");
 
@@ -62,19 +61,16 @@ public class RegistrarUsuario extends javax.swing.JFrame {
 
         jLabel8.setText("Dirección");
 
-        jTextField5.setText("Cr 7b # 10 - 13");
-
-        jPasswordField1.setText("jPasswordField1");
-
-        jTextField4.setText("Número de Celular");
-
-        jTextField3.setText("1998/02/12");
-
-        jTextField2.setText("Documento de Identidad ");
-
-        jButton1.setText("Registrar Usuario");
+        Usuario_BtnRegistrarUsuario.setText("Registrar Usuario");
 
         jLabel2.setText("Andrés Mauricio Acelas Arevalo - Cod. 1.052.412.239");
+
+        Usuario_Vaciar.setText("Vaciar");
+        Usuario_Vaciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Usuario_VaciarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,10 +90,6 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(59, 59, 59)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -107,18 +99,24 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING))
                                     .addGap(18, 18, 18)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField1)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)))
+                                        .addComponent(Usuario_Nombres)
+                                        .addComponent(Usuario_Identidad, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                                        .addComponent(Usuario_Fecha, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)
+                                        .addComponent(Usuario_Telefono, javax.swing.GroupLayout.DEFAULT_SIZE, 244, Short.MAX_VALUE)))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGap(57, 57, 57)
                                     .addComponent(jLabel8)
                                     .addGap(18, 18, 18)
-                                    .addComponent(jTextField5)))))
+                                    .addComponent(Usuario_Direccion, javax.swing.GroupLayout.DEFAULT_SIZE, 243, Short.MAX_VALUE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(18, 18, 18)
+                                .addComponent(Usuario_Contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(jButton1)))
+                        .addGap(124, 124, 124)
+                        .addComponent(Usuario_BtnRegistrarUsuario)
+                        .addGap(18, 18, 18)
+                        .addComponent(Usuario_Vaciar)))
                 .addContainerGap(27, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -129,36 +127,48 @@ public class RegistrarUsuario extends javax.swing.JFrame {
                 .addGap(40, 40, 40)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Usuario_Nombres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Usuario_Identidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Usuario_Fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Usuario_Telefono, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel8)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Usuario_Direccion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
+                    .addComponent(Usuario_Contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Usuario_BtnRegistrarUsuario)
+                    .addComponent(Usuario_Vaciar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void Usuario_VaciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Usuario_VaciarActionPerformed
+        // TODO add your handling code here:
+        Usuario_Contrasena.setText("");
+        Usuario_Direccion.setText("");
+        Usuario_Fecha.setText("");
+        Usuario_Identidad.setText("");
+        Usuario_Nombres.setText("");
+        Usuario_Telefono.setText("");
+    }//GEN-LAST:event_Usuario_VaciarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,7 +206,14 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Usuario_BtnRegistrarUsuario;
+    private javax.swing.JPasswordField Usuario_Contrasena;
+    private javax.swing.JTextField Usuario_Direccion;
+    private javax.swing.JTextField Usuario_Fecha;
+    private javax.swing.JTextField Usuario_Identidad;
+    private javax.swing.JTextField Usuario_Nombres;
+    private javax.swing.JTextField Usuario_Telefono;
+    private javax.swing.JButton Usuario_Vaciar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -205,11 +222,5 @@ public class RegistrarUsuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }
