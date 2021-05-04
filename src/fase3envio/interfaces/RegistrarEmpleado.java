@@ -5,6 +5,11 @@
  */
 package fase3envio.interfaces;
 
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import models.Empleado;
+
 /**
  *
  * @author PC
@@ -63,7 +68,18 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
 
         jLabel8.setText("Rol");
 
+        Empleado_IContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Empleado_IContrasenaActionPerformed(evt);
+            }
+        });
+
         Empleado_BtnRegistrar.setText("Registrar Empleado");
+        Empleado_BtnRegistrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Empleado_BtnRegistrarActionPerformed(evt);
+            }
+        });
 
         Empleado_BtnVaciar.setText("Limpiar");
         Empleado_BtnVaciar.addActionListener(new java.awt.event.ActionListener() {
@@ -163,6 +179,27 @@ public class RegistrarEmpleado extends javax.swing.JFrame {
         Empleado_Nombres.setText("");
         Empleado_Telefono.setText("");
     }//GEN-LAST:event_Empleado_BtnVaciarActionPerformed
+
+    private void Empleado_BtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Empleado_BtnRegistrarActionPerformed
+            Empleado empleado = new Empleado(3, 
+                                            Empleado_Nombres.getText(), 
+                                            Empleado_Identificacion.getText(), 
+                                            Empleado_Nacimiento.getText(), 
+                                            "OFICINA 1", 
+                                            Empleado_Telefono.getText(), 
+                                            EmpleadoRol.getText(), 
+                                            Empleado_IContrasena.getText());
+           try {
+               empleado.insertaEmpleado();
+           } catch (SQLException ex) {
+               System.out.println("error" + ex);
+          }
+        
+    }//GEN-LAST:event_Empleado_BtnRegistrarActionPerformed
+
+    private void Empleado_IContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Empleado_IContrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Empleado_IContrasenaActionPerformed
 
     /**
      * @param args the command line arguments

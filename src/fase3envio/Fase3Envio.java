@@ -25,13 +25,13 @@ public class Fase3Envio {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Fase3EmpresaEnvios.Main.main()");
-        Conexion conexion = new Conexion();
-        conexion.establecerConexion();
+        // Conexion conexion = new Conexion();
+        // conexion.establecerConexion();
         // showPanelLogin();
         // showPanelConexion();
-        // showPanelRegistrarEmpleado();
+        showPanelRegistrarEmpleado();
         // showPanelRegistrarUsuario();
-        showPanelEnviar();
+        // showPanelEnviar();
     }
     
     public static void showPanelLogin() {

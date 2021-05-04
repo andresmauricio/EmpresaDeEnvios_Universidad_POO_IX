@@ -13,11 +13,17 @@ import java.sql.DriverManager;
  * @author PC
  */
 public class Conexion {
+    public Connection IConnection;
+    
+   public Conexion (){
+       establecerConexion();
+    }
+    
     public void establecerConexion() {
         String host = "localhost";
         String user = "root";
         String password = "";
-        String basededatos = "envios";
+        String basededatos = "mydb";
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
