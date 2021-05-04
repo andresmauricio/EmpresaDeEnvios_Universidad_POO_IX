@@ -19,8 +19,9 @@ public class Fase3Envio {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("Fase3EmpresaEnvios.Main.main()");
+        Conexion conexion = new Conexion();
+        conexion.establecerConexion();
         showPanelEnviar();
-
     }
     
     public static void showPanelLogin() {
